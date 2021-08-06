@@ -4,14 +4,14 @@ Premise: Randomly generate a disease, its symptoms, and a cure.  The disease wil
 
 
 
-//i want to include three symptoms run of the program
+//i want to include three symptoms per run of the program
 var symptoms = [
-    "see far objects",
-    "have slightly blurry vision after rubbing your eyes",
-    "tear up a little from yawning",
-    "get dizzy from standing up too quickly",
-    "find it tough to get out of bed",
-    "subject urinates regularly"
+    "See far objects",
+    "Have slightly blurry vision after rubbing your eyes",
+    "Tear up a little from yawning",
+    "Get dizzy from standing up too quickly",
+    "Find it tough to get out of bed",
+    "Urinates regularly"
 ];
 
 
@@ -19,7 +19,8 @@ var symptoms = [
 var cures = [
     "Essential oils.  Any combination should work.",
     "More astrology is recommended",
-    "Cliff jumping with no paraschute should cure the issue.  And the symptoms!"
+    "Cliff jumping with no paraschute should cure the issue.  And the symptoms!",
+    "Watch a few episodes of Goop should do it."
 ];
 
 
@@ -30,11 +31,11 @@ var sylOne = [
 ];
 
 var sylTwo = [
-    "thoro", "rene", "oraxi", "ortho", "clenbu", "weren"
+    "thoro", "rene", "oraxi", "ortho", "clenbu", "weren", "profil", "bes"
 ];
 
 var sylThree = [
-    "azine", "araxi", "plasia", "praxis", "thraxi"
+    "azine", "araxi", "plasia", "praxis", "thraxi", "itis", "laxin", "ois"
 ];
 
 
@@ -46,7 +47,7 @@ function generateDisease() {
     let thirdS = sylThree[Math.floor(Math.random() * sylThree.length)];
     return firstS + secondS + thirdS;
 };
-console.log(generateDisease()); //test
+//console.log(generateDisease()); //test
 
 //generate symptoms, pick three and but make sure they are all different
 function generateSymptoms() {
@@ -64,6 +65,23 @@ function generateSymptoms() {
     return sympArr;
 };
 
-//test code
+/* test code
 let testArr = generateSymptoms();
 console.log(testArr[0], testArr[1], testArr[2])
+*/
+
+
+//generate a cure string
+function generateCures() {
+    let thisCure = cures[Math.floor(Math.random() * cures.length)];
+    return thisCure;
+};
+
+console.log(`Based on an advanced AI calculus, your disease could be: ${generateDisease()}`);
+console.log("Symptoms include:");
+let sympArrFinal = generateSymptoms();
+console.log(`1. ${sympArrFinal[0]}`);
+console.log(`2. ${sympArrFinal[1]}`);
+console.log(`3. ${sympArrFinal[2]}`);
+console.log("Possible cures:");
+console.log(generateCures());
